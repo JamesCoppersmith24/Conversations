@@ -71,10 +71,10 @@ class Player8(Player):
 			fresh_items = self.get_fresh_items(history)
 			most_important_fresh_item = self.get_most_important_item(fresh_items)
 			return most_important_fresh_item
-
-		on_subject_items = self.get_on_subject_items(history)
-		most_important_on_subject_item = max(
+		# James proposed addition:
+		else:
+			on_subject_items = self.get_on_subject_items(history)
+			most_important_on_subject_item = max(
 			on_subject_items, key=lambda item: item.importance, default=None
-		)
-
-		return most_important_on_subject_item
+			)
+			return most_important_on_subject_item
